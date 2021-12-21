@@ -23,7 +23,7 @@
 		<!-- 教育经历 -->
 		<view class="b-r-12 bg-fff box-shadow f-s-32 color p-40 m-b-30">
 			<view class="row-between">
-				教育经历<u-icon name="plus-circle" size="22" color="#999" @click="navigateTos('/packageUser/resume/add')"></u-icon>
+				教育经历<u-icon name="plus-circle" size="22" color="#999" @click="navigateTos('/packageUser/resume/add?text=教育经历')"></u-icon>
 			</view>
 			<u-cell :border="true" v-for="(item,index) in 2" :key="index" isLink>
 				<view slot="title" class="c9 f-s-24 p-t-30">
@@ -36,7 +36,7 @@
 		<!-- 工作经历 -->
 		<view class="b-r-12 bg-fff box-shadow f-s-32 color p-40 m-b-30">
 			<view class="row-between">
-				工作经历<u-icon name="plus-circle" size="22" color="#999"></u-icon>
+				工作经历<u-icon name="plus-circle" size="22" color="#999" @click="navigateTos('/packageUser/resume/add?text=工作经历')"></u-icon>
 			</view>
 			<u-cell :border="true" v-for="(item,index) in 2" :key="index" isLink>
 				<view slot="title" class="c9 f-s-24 p-t-30">
@@ -49,7 +49,7 @@
 		<!-- 工作期望 -->
 		<view class="b-r-12 bg-fff box-shadow f-s-22 c9 p-40 m-b-30">
 			<view class="row-between f-s-32 color">
-				工作期望<u-icon name="edit-pen" size="22" color="#999"></u-icon>
+				工作期望<u-icon name="edit-pen" size="22" color="#999" @click="navigateTos('/packageUser/resume/add?text=工作期望')"></u-icon>
 			</view>
 			<view class="m-t-50">
 				<view>期望工作类型</view>
@@ -65,7 +65,7 @@
 		<!-- 技能/证书 -->
 		<view class="b-r-12 bg-fff box-shadow f-s-32 color p-40 m-b-30">
 			<view class="row-between">
-				技能/证书<u-icon name="plus-circle" size="22" color="#999"></u-icon>
+				技能/证书<u-icon name="plus-circle" size="22" color="#999" @click="navigateTos('/packageUser/resume/add?text=技能/证书')"></u-icon>
 			</view>
 			<u-cell :border="true" v-for="(item,index) in 2" :key="index" isLink>
 				<view slot="title" class="row center c9 f-s-24 p-t-30">
@@ -82,7 +82,7 @@
 			<!-- 擅长语言 -->
 			<view class="b-r-12 bg-fff box-shadow f-s-24 c9 p-40 m-b-30">
 				<view class="row-between f-s-32 color">
-					擅长语言<u-icon name="edit-pen" size="22" color="#999"></u-icon>
+					擅长语言<u-icon name="edit-pen" size="22" color="#999" @click="navigateTos('/packageUser/resume/add?text=擅长语言')"></u-icon>
 				</view>
 				<view class="m-t-50">
 					英语
@@ -91,7 +91,7 @@
 			<!-- 礼仪模特卡 -->
 			<view class="b-r-12 bg-fff box-shadow f-s-24 c9 p-40 m-b-30">
 				<view class="row-between f-s-32 color">
-					礼仪模特卡<u-icon name="edit-pen" size="22" color="#999"></u-icon>
+					礼仪模特卡<u-icon name="edit-pen" size="22" color="#999" @click="navigateTos('/packageUser/resume/add?text=礼仪模特卡')"></u-icon>
 				</view>
 				<view class="m-t-50 row-between">
 					<view class="">
@@ -111,7 +111,7 @@
 			<!-- 相关附件 -->
 			<view class="b-r-12 bg-fff box-shadow f-s-24 c9 p-40 m-b-30">
 				<view class="row-between f-s-32 color">
-					相关附件<u-icon name="edit-pen" size="22" color="#999"></u-icon>
+					相关附件<u-icon name="edit-pen" size="22" color="#999" @click="navigateTos('/packageUser/resume/add?text=相关附件')"></u-icon>
 				</view>
 				<view class="m-t-50">
 					暂无

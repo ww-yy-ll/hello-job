@@ -71,6 +71,25 @@
 					"enablePullDownRefresh": false
 				}
 
+			}, {
+				"path": "success",
+				"style": {
+					"navigationBarTitleText": "报名成功",
+					"enablePullDownRefresh": false,
+					"navigationBarBackgroundColor": "#fff",
+					"navigationBarTextStyle": "black"
+				}
+
+			}, {
+				"path": "jobMap",
+				"style": {
+					// "navigationStyle": "custom",
+					"navigationBarTitleText": "工作地图",
+					"enablePullDownRefresh": false,
+					"navigationBarBackgroundColor": "#F56718",
+					"navigationBarTextStyle": "white"
+				}
+
 			}]
 		},
 		{
@@ -83,7 +102,7 @@
 					"navigationBarBackgroundColor": "#fff",
 					"navigationBarTextStyle": "black"
 				}
-			},{
+			}, {
 				"path": "resume/base-info",
 				"style": {
 					"navigationBarTitleText": "基本信息",
@@ -99,7 +118,7 @@
 					"navigationBarBackgroundColor": "#fff",
 					"navigationBarTextStyle": "black"
 				}
-			},{
+			}, {
 				"path": "resume/add",
 				"style": {
 					"navigationBarTitleText": "教育经历",

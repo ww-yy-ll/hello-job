@@ -48,7 +48,7 @@
 				let oneDeg = 3.6;
 				let deg = startDeg + oneDeg * computeDeg;
 				this.deg = deg
-				console.log(percent, color, bgColor, startDeg, computeDeg, oneDeg, deg);
+				// console.log(percent, color, bgColor, startDeg, computeDeg, oneDeg, deg);
 				if (percent <= 50) {
 					return `linear-gradient(90deg, ${bgColor} 50%, transparent 50%), linear-gradient(${deg}deg, ${color} 50%, ${bgColor} 50%)`;
 					// return `linear-gradient(90deg, ${bgColor} 50%, transparent 50%), linear-gradient(${deg}deg, ${color} 50%, ${bgColor} 50%)`;

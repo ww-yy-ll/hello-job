@@ -11,6 +11,9 @@
 .bg-F8F8F8 {
 	background: $default-bg-color;
 }
+.main-bg {
+	background: $theme-color;
+}
 
 .box-shadow {
 	box-shadow: 0 3rpx 4rpx rgba($color: #000000, $alpha: 0.05);
