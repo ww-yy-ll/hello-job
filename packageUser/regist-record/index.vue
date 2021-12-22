@@ -11,7 +11,7 @@
 				</u-tabs>
 			</view>
 		</u-sticky>
-		<view class="">
+		<view class="" v-if="list.length>0">
 			<u-swipe-action class="p-30">
 				<u-swipe-action-item 
 					class="box-shadow m-b-30 bg-fff b-r-12" 
@@ -32,6 +32,12 @@
 					</view>
 				</u-swipe-action-item>
 			</u-swipe-action>
+		</view>
+		<view class="" v-if="list.length===0">
+			<u-empty text="你还没有报名记录噢~" textColor="#999" icon="../../static/images/icon/index/search-more.png"></u-empty>
+			<view class="m-t-30 p-l-r-30">
+				<u-button text="去找兼职" shape="circle" color="#F56718" size="large" @click="switchTabs('/pages/partTime/index')"></u-button>
+			</view>
 		</view>
 	</view>
 </template>
@@ -57,7 +63,7 @@
 				],
 				options: [{text: '删除',style: {backgroundColor: '#f56c6c'}}],
 				list:[
-					{
+					/* {
 						status: 0,
 						title: '急招短视频文章评论员│APP急招短视频文章评论员│APP',
 						place: '天河',
@@ -81,7 +87,7 @@
 						place: '天河天河天河天河',
 						time: '2020-05-20',
 						money: '20000元/天'
-					},
+					}, */
 				]
 			};
 		},

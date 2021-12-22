@@ -9,13 +9,13 @@
 		</view>
 		<view class="m-t-40 p-30">
 			<view class="m-b-30">
-				<u-button text="告诉好友" shape="circle" color="#F56718" size="large" @click=""></u-button>
+				<u-button text="告诉好友" shape="circle" color="#F56718" size="large" openType="share" @click=""></u-button>
 			</view>
 			<view class="m-b-30">
-				<u-button text="回到首页" shape="circle" color="#F56718" size="large" plain @click=""></u-button>
+				<u-button text="回到首页" shape="circle" color="#F56718" size="large" plain @click="switchTabs('/pages/index/index')"></u-button>
 			</view>
 			<view class="">
-				<u-button text="添加到我的小程序,实时查看报名情况" shape="circle" color="#F56718" plain size="large" @click=""></u-button>
+				<u-button text="添加到我的小程序,实时查看报名情况" shape="circle" color="#F56718" plain size="large" @click="addToMyProgram"></u-button>
 			</view>
 		</view>
 		
@@ -24,15 +24,33 @@
 			<view class="m-t-30 f-s-22 c9">长按保存二维码，下载兼职猫APP</view>
 			<view class="m-t-10 f-s-22 c9">更多的兼职请上兼职猫</view>
 		</view>
+		<!-- 添加到我的小程序 提示 -->
+		<JobTip ref="tip" bgColor="#F56718" :fontObj="fontObj" />
+		
 	</view>
 </template>
 
 <script>
+	import JobTip from '@/components/layout/job-tip.vue'
 	export default {
+		components:{ JobTip }, 
 		data() {
 			return {
-				
+				show: true,
+				fontObj: {
+					color: "#fff",
+					fontSize: "26rpx",
+					fontWeight: "0",
+				}
 			};
+		},
+		onHide() {
+			this.$refs.tip.showTip = false
+		},
+		methods:{
+			addToMyProgram(){
+				this.$refs.tip.showTip = true
+			}
 		}
 	}
 </script>
