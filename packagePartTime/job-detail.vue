@@ -102,12 +102,18 @@
 		<view class="p-b-100 p-t-20 f-s-22 c9 row-center">本猫也是有底线的~</view>
 		
 		<view class="detail-bottom row center bg-fff border-box top-shadow">
-			<view class="detail-bottom__left row-center">
+			<button  class="detail-bottom__left row-center" open-type="share" @click="()=>handler().share()">
 				<view class="column-center">
 					<u-icon name="share" size="20" color="#F56718" label="分享" labelColor="#F56718"></u-icon>
 					<view class="main-color f-s-20 m-t-2">(分享可获得录用优先)</view>
 				</view>
-			</view>
+			</button>
+			<!-- <view class="detail-bottom__left row-center">
+				<view class="column-center">
+					<u-icon name="share" size="20" color="#F56718" label="分享" labelColor="#F56718"></u-icon>
+					<view class="main-color f-s-20 m-t-2">(分享可获得录用优先)</view>
+				</view>
+			</view> -->
 			
 			<view class="detail-bottom__right row-center f-s-26 c-white">
 				<view v-if="!isSign" class="column-center" @click="()=>handler().signSuccess()">
@@ -391,6 +397,22 @@
 					reload: ()=> {
 						
 					},
+					share:()=>{
+						// #ifdef APP
+						uni.share({
+						    provider: "weixin",
+						    scene: "WXSceneSession",
+						    type: 2,
+						    imageUrl: "https://bjetxgzv.cdn.bspapp.com/VKCEYUGU-uni-app-doc/d8590190-4f28-11eb-b680-7980c8a877b8.png",
+						    success: function (res) {
+						        console.log("success:" + JSON.stringify(res));
+						    },
+						    fail: function (err) {
+						        console.log("fail:" + JSON.stringify(err));
+						    }
+						});
+						// #endif
+					},
 					signSuccess:()=>{
 						console.log('signSuccess');
 						this.navigateTos('/packagePartTime/success')
@@ -403,6 +425,21 @@
 
 <style lang="scss" scoped>
 	@import 'static/style/variables.scss';
+	/deep/button {
+	    margin-left: 0;
+	    margin-right: 0;
+	    padding-left: 0; 
+	    padding-right: 0;
+	    line-height: 24rpx;
+	    border-radius: 0;
+	    background-color: #fff;
+			&:after {
+				width: 100%;
+				height: 100%;
+				border: none;
+				border-radius: 0;
+			}
+	}
 	/deep/.job-list .job-item:last-child {
 		border-bottom: none;
 	}

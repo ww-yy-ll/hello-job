@@ -8,11 +8,16 @@
 			</view>
 		</view>
 		<view class="m-t-40 p-30">
-			<u-button text="告诉好友" shape="circle" color="#F56718" size="large" class="m-b-30" @click=""></u-button>
-			<u-button text="回到首页" shape="circle" color="#F56718" size="large" plain class="m-b-30" @click=""></u-button>
-			<u-button text="添加到我的小程序,实时查看报名情况" shape="circle" color="#F56718" plain class="m-b-30" size="large" @click=""></u-button>
+			<view class="m-b-30">
+				<u-button text="告诉好友" shape="circle" color="#F56718" size="large" @click=""></u-button>
+			</view>
+			<view class="m-b-30">
+				<u-button text="回到首页" shape="circle" color="#F56718" size="large" plain @click=""></u-button>
+			</view>
+			<view class="">
+				<u-button text="添加到我的小程序,实时查看报名情况" shape="circle" color="#F56718" plain size="large" @click=""></u-button>
+			</view>
 		</view>
-		
 		
 		<view class="column-center m-t-40">
 			<u--image :showLoading="false" src="../static/images/icon/index/search-more.png" width="180rpx" height="180rpx" @click=""></u--image>
@@ -32,6 +37,6 @@
 	}
 </script>
 
-<style lang="scss">
-
+<style lang="scss" scoped>
+	
 </style>

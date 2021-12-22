@@ -24,7 +24,7 @@
 			<!-- 地点 -->
 			<view v-if="showTop" class="place-box row-between m-t-20 m-b-40 p-l-r-30">
 				<view class="row-center place-box-left">
-					<u-icon name="reload" size="15" color=""></u-icon>
+					<u-icon name="reload" size="15" color="" @click="()=>handler().refresh()"></u-icon>
 					<text class="f-s-22 job-inline m-l-15">广西壮族自治区南宁市兴宁区金仑路32号广西壮族自治区南宁市兴宁区金仑路32号</text>
 				</view>
 				<view class="row-center place-box-right" @click="()=>handler().openLimit()">
@@ -539,6 +539,9 @@
 					},
 					stopPullDownRefresh: ()=> {
 						uni.stopPullDownRefresh()
+					},
+					refresh:()=>{
+						console.log('刷新地址');
 					},
 					// 遮罩点击事件
 					closeMask: ()=>{

@@ -11,7 +11,7 @@
 		</view>
 		<!-- 轮播图 -->
 		<view class="bg-F8F8F8 p-t-20 p-l-30 p-r-30">
-			<u-swiper :list="banners" height="300rpx" @change="e => bannerIndex = e.current" :autoplay="false">
+			<u-swiper keyName="image" :list="banners" height="300rpx" @click="(index)=>handler().openBannerPage(index)" @change="e => bannerIndex = e.current" :autoplay="false">
 				<view slot="indicator" class="indicator">
 					<view class="indicator__dot" v-for="(item, index) in banners" :key="index" :class="[index === bannerIndex && 'indicator__dot--active']"></view>
 				</view>
@@ -34,7 +34,7 @@
 			</view>
 			<view class="mqjz-tip m-b-20">工作好~环境好~福利更好~</view>
 			<view class="jz-item box-shadow row space-between m-b-20">
-				<view class="jz-item-left row center">
+				<view class="jz-item-left row center" @click="()=>handler().openPage({title:'货拉拉'})">
 					<image src="https://cdn.uviewui.com/uview/album/1.jpg" mode="aspectFill"></image>
 					<view class="">
 						<view>货拉拉</view>
@@ -43,7 +43,7 @@
 				</view>
 				<view class="">200/单</view>
 			</view>
-			<view class="more-item box-shadow m-b-20">
+			<view class="more-item box-shadow m-b-20"@click="()=>handler().openPage({title:'更多'})">
 				更多名企兼职，点这里发现！>
 				<image src="@/static/images/icon/index/search-more.png" mode="aspectFill" class="bg"></image>
 			</view>
@@ -106,9 +106,16 @@
 				],
 				bannerIndex: 0,
 				banners: [
-					'https://cdn.uviewui.com/uview/swiper/swiper3.png',
-					'https://cdn.uviewui.com/uview/swiper/swiper2.png',
-					'https://cdn.uviewui.com/uview/swiper/swiper1.png',
+					{
+						image:'https://cdn.uviewui.com/uview/swiper/swiper1.png',
+						title: '轮播图1'
+					},{
+						image:'https://cdn.uviewui.com/uview/swiper/swiper2.png',
+						title: '轮播图2'
+					},{
+						image:'https://cdn.uviewui.com/uview/swiper/swiper3.png',
+						title: '轮播图3'
+					}
 				],
 				cardList:[
 					{
@@ -395,6 +402,13 @@
 		methods: {
 			handler(){
 				return {
+					// 轮播图页面跳转
+					openBannerPage:(index) => {
+						let item = {
+							title: this.banners[index].ttile
+						}
+						this.handler().openPage(item)
+					},
 					// 页面跳转
 					openPage:(listItem) => {
 						let params = JSON.stringify(listItem)
