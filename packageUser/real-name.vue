@@ -42,7 +42,7 @@
 		<view class="b-r-12 bg-fff box-shadow f-s-24 p-40 m-t-20">
 			<view class="row-between p-25 b-r-12 m-t-20 bg-F8F8F8">
 				<view class="">当前绑定的手机号：<text class="main-color">139****01</text></view>
-				<view class="c-blue">更改绑定</view>
+				<view class="c-blue" @click="navigateTos('/packageUser/phone')">更改绑定</view>
 			</view>
 			<view class="p-b-40">
 				<!-- 注意，如果需要兼容微信小程序，最好通过setRules方法设置rules规则 -->

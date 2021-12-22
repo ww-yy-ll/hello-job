@@ -17,7 +17,9 @@
             "delay" : 0
         },
         /* 模块配置 */
-        "modules" : {},
+        "modules" : {
+            "Maps" : {}
+        },
         /* 应用发布信息 */
         "distribute" : {
             /* android打包配置 */
@@ -43,7 +45,14 @@
             /* ios打包配置 */
             "ios" : {},
             /* SDK配置 */
-            "sdkConfigs" : {}
+            "sdkConfigs" : {
+                "maps" : {
+                    "baidu" : {
+                        "appkey_ios" : "jk33xbdUYVS0tT9Vd7vR11nzraxYGwjI",
+                        "appkey_android" : "gdotwKYNVWtWYWzqCQwqsmFvxY5FEkCw"
+                    }
+                }
+            }
         }
     },
     /* 快应用特有相关 */

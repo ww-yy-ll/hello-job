@@ -127,6 +127,70 @@
 					"navigationBarTextStyle": "black"
 				}
 			}, {
+				"path": "resume/edu-experience",
+				"style": {
+					"navigationBarTitleText": "教育经历",
+					"enablePullDownRefresh": false,
+					"navigationBarBackgroundColor": "#fff",
+					"navigationBarTextStyle": "black"
+				}
+			}, {
+				"path": "resume/schools",
+				"style": {
+					"navigationBarTitleText": "选择学校",
+					"enablePullDownRefresh": false,
+					"navigationBarBackgroundColor": "#fff",
+					"navigationBarTextStyle": "black"
+				}
+			}, {
+				"path": "resume/job-experience",
+				"style": {
+					"navigationBarTitleText": "工作经历",
+					"enablePullDownRefresh": false,
+					"navigationBarBackgroundColor": "#fff",
+					"navigationBarTextStyle": "black"
+				}
+			}, {
+				"path": "resume/job-expect",
+				"style": {
+					"navigationBarTitleText": "工作期望",
+					"enablePullDownRefresh": false,
+					"navigationBarBackgroundColor": "#fff",
+					"navigationBarTextStyle": "black"
+				}
+			}, {
+				"path": "resume/skills",
+				"style": {
+					"navigationBarTitleText": "技能/证书",
+					"enablePullDownRefresh": false,
+					"navigationBarBackgroundColor": "#fff",
+					"navigationBarTextStyle": "black"
+				}
+			}, {
+				"path": "resume/language",
+				"style": {
+					"navigationBarTitleText": "擅长语言",
+					"enablePullDownRefresh": false,
+					"navigationBarBackgroundColor": "#fff",
+					"navigationBarTextStyle": "black"
+				}
+			}, {
+				"path": "resume/model",
+				"style": {
+					"navigationBarTitleText": "礼仪模特卡",
+					"enablePullDownRefresh": false,
+					"navigationBarBackgroundColor": "#fff",
+					"navigationBarTextStyle": "black"
+				}
+			}, {
+				"path": "resume/files",
+				"style": {
+					"navigationBarTitleText": "相关附件",
+					"enablePullDownRefresh": false,
+					"navigationBarBackgroundColor": "#fff",
+					"navigationBarTextStyle": "black"
+				}
+			}, {
 				"path": "regist-record/index",
 				"style": {
 					"navigationBarTitleText": "报名记录",
@@ -148,6 +212,15 @@
 				"style": {
 					"navigationBarTitleText": "实名认证",
 					"enablePullDownRefresh": false
+				}
+
+			}, {
+				"path": "phone",
+				"style": {
+					"navigationBarTitleText": "更换手机号",
+					"enablePullDownRefresh": false,
+					"navigationBarBackgroundColor": "#fff",
+					"navigationBarTextStyle": "black"
 				}
 
 			}, {

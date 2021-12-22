@@ -5,8 +5,8 @@
 			<view class="b-r-12 bg-fff box-shadow p-40 m-b-30">
 				<view class="p-b-30">
 					<u--form labelPosition="top" :model="form" ref="form" :labelStyle="labelStyle">
-						<u-form-item label="学校" :required="true" prop="shcool" ref="shcool" borderBottom @click="openSelect('shcool')">
-							<u--input :disabled="true" v-model="form.shcool" border="none" placeholder="请输入您的学校" disabledColor="#fff"></u--input>
+						<u-form-item label="学校" :required="true" prop="shcool" ref="shcool" borderBottom @click="navigateTos('/packageUser/resume/schools')">
+							<u--input :disabled="true" v-model="form.shcool" border="none" placeholder="请选择您的学校" disabledColor="#fff"></u--input>
 							<u-icon slot="right" name="arrow-right"></u-icon>
 						</u-form-item>
 						<u-form-item label="主修专业" :required="false" prop="major" ref="major" borderBottom>
@@ -254,6 +254,7 @@
 </template>
 
 <script>
+	import { mapState } from 'vuex'
 	export default {
 		data() {
 			return {
@@ -574,6 +575,9 @@
 				
 			};
 		},
+		computed:{
+			...mapState(['eduVals']),
+		},
 		onReady() {
 			// 微信小程序需要用此写法
 			this.$refs.datetimePicker.setFormatter(this.formatter)
@@ -584,6 +588,11 @@
 			if(text) {
 				this.init().setTitle(text)
 			}
+		},
+		onShow() {
+			this.form.school = 'aaa'
+			// this.form.school = this.eduVals.school
+			// this.init().setSchool()
 		},
 		methods: {
 			init(){
@@ -623,6 +632,15 @@
 							default: 
 								break
 						}
+					},
+					setSchool:()=>{
+						// this.form.school = this.eduVals.school
+						// this.$refs.form
+						this.form.school = 'aaa'
+						this.$nextTick(function(){
+							// this.form.school = this.eduVals.school
+						})
+						console.log('this.eduVals.school', this.eduVals.school, this.form, this.$refs.form);
 					},
 				}
 			},

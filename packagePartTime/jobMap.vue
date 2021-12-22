@@ -33,7 +33,7 @@
 	</view>
 </template>
 <script>
-	const img = '/static/logo.png';
+	const img = '@/static/logo.png';
 	export default {
 		data() {
 			return {
@@ -152,7 +152,12 @@
 
 	.map-search {
 		position: fixed;
+		/* #ifdef MP-WEIXIN */
 		top: 19%;
+		/* #endif */
+		/* #ifdef H5 */
+		top: 24%;
+		/* #endif */
 		left: 30rpx;
 		z-index: 99;
 		width: 540rpx;

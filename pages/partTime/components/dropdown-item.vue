@@ -25,12 +25,12 @@
 			<!-- 区域 -->
 			<view v-if="menuType==='area'" class="">
 				<view class="p-30">
-					<view class="type-item m-b-20" :class="{'active': areaIdx===-1}" @click="selectAllArea()">全南宁</view>
+					<view class="type-item m-b-20" :class="{'active': isAllArea}" @click="selectAllArea()">全南宁</view>
 					<view class="type-list m-b-20 row center">
 						<view class="type-item m-b-20" 
 							v-for="(areaItem,areaIndex) in newList" :key="areaIndex" 
-							:class="{'active': areaIdx===areaIndex}" 
-							@click="selectArea(areaIndex)">
+							:class="{'active': areaItem.check===true}" 
+							@click="selectArea(areaItem, areaIndex)">
 							{{areaItem.name}}
 						</view>
 					</view>
@@ -101,6 +101,7 @@
 			return {
 				newList:[],
 				isAllType: true, // 是否选中全部类型
+				isAllArea: true, // 是否选中全部区域
 				typeIndex: -1, // 类型选中索引
 				areaIdx: -1, // 区域选中索引
 				isQiYe: false, // 是否只看企业认证
@@ -131,23 +132,29 @@
 			// 选中类型
 			select(item, index) {
 				item.check = !item.check
-				this.isAllType = item.check===true? false: true
+				let selectArr = []
+				if(item.check===true) {
+					this.isAllType = false
+				}
 				this.newList.forEach((v=>{
 					v.children.forEach((t, i)=>{
-						if( item.label !== t.label ) {
-							t.check = false
+						if( t.check === true ) {
+							selectArr.push(t)
 						}
 					})
 				}))
+				this.isAllType = selectArr.length!==0 ? false : true
 				// this.$emit('select', {item, index})
 			},
 			// 选中类型提交
 			submit() {
-				let selectData = {}
+				// let selectData = {}
+				let selectData = []
 				this.newList.forEach((v=>{
 					v.children.forEach(t=>{
 						if(t.check === true) {
-							selectData = t
+							// selectData = t
+							selectData.push(t)
 						}
 					})
 				}))
@@ -155,20 +162,36 @@
 			},
 			// 选中全部区域
 			selectAllArea(){
-				let i = this.areaIdx
-				this.areaIdx = i === -1 ? -2 : -1
+				this.isAllArea = true
+				if(this.isAllArea===true) {
+					this.newList.forEach(v=>{
+						v.check = false
+					})
+				}
 			},
 			// 选中区域
-			selectArea(index) {
-				let i = this.areaIdx
-				this.areaIdx = i===index ? -1 : index
+			selectArea(item, index) {
+				item.check = !item.check
+				let selectArr = []
+				if(item.check===true) {
+					this.isAllArea = false
+				}
+				this.newList.forEach(v=>{
+					if( v.check === true ) {
+						selectArr.push(v)
+					}
+				})
+				this.isAllArea = selectArr.length!==0 ? false : true
 			},
 			// 确定区域提交
 			submitArea(){
 				// console.log('确定区域提交');
-				const { areaIdx, newList } = this
-				let selectData = {}
-				selectData = newList[areaIdx]
+				let selectData = []
+				this.newList.forEach(v=>{
+					if(v.check === true) {
+						selectData.push(v)
+					}
+				})
 				this.$emit('submitArea', selectData)
 			},
 			// 选中排序

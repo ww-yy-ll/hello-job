@@ -7,7 +7,10 @@ Vue.use(Vuex)
 const store = new Vuex.Store({
 	state:{
 		sysNav: {}, // 系统状态栏或导航栏高度
-		city: uni.getStorageSync('city') || '' // 当前城市
+		city: uni.getStorageSync('city') || '' ,// 当前城市
+		eduVals: { // 添加教育经历时选择学校后，存学校数据到这里，保存后再清空数据
+			school: ''
+		}
 	},
 	mutations:{
 		// 设置导航栏高度
@@ -18,6 +21,11 @@ const store = new Vuex.Store({
 		SET_CITY(state, value) {
 			state.city = value
 			uni.setStorageSync('city', value) // 存缓存
+		},
+		// 设置学校
+		SET_EDUVALS(state, value) {
+			// console.log(state, value);
+			state.eduVals = value
 		}
 	},
 	actions:{
@@ -44,6 +52,7 @@ const store = new Vuex.Store({
 	getters: {
 		sysNav: state => state.sysNav,
 		city: state => state.city,
+		eduVals: state => state.eduVals,
 	}
 })
 

@@ -122,18 +122,18 @@
 					{label: '离我最近'},
 				],
 				areaList: [ // 区域下拉框数据
-					{name:'兴宁'},
-					{name:'青秀'},
-					{name:'西乡塘'},
-					{name:'江南'},
-					{name:'良庆'},
-					{name:'邕宁'},
-					{name:'武鸣县'},
-					{name:'隆安县'},
-					{name:'马山县'},
-					{name:'上林县'},
-					{name:'宾阳县'},
-					{name:'横县'}
+					{name:'兴宁', check: false},
+					{name:'青秀', check: false},
+					{name:'西乡塘', check: false},
+					{name:'江南', check: false},
+					{name:'良庆', check: false},
+					{name:'邕宁', check: false},
+					{name:'武鸣县', check: false},
+					{name:'隆安县', check: false},
+					{name:'马山县', check: false},
+					{name:'上林县', check: false},
+					{name:'宾阳县', check: false},
+					{name:'横县', check: false}
 				],
 				filterList:[ // 筛选下拉框数据
 					{

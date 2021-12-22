@@ -8,20 +8,27 @@
 				<view class="f-s-28">兴宁|短招</view>
 			</view>
 			<view class="detail-top-date detail-box">
-				<view class="row start m-b-30">
+				<view class="row start">
 					<u-icon name="calendar" size="20" color="#999"></u-icon>
 					<view class="m-l-20">
 						<view class="f-s-26 m-b-20 color font">工作日期</view>
 						<view class="f-s-24">12月10日-12月31日（报名后具体沟通）</view>
 					</view>
 				</view>
-				<view class="row start">
+				<view class="row start m-t-30">
 					<u-icon name="map" size="20" color="#999"></u-icon>
 					<view class="m-l-20">
 						<view class="f-s-26 m-b-20 color">工作地点</view>
-						<view class="f-s-24">三塘昆仑大道金仑路10号</view>
+						<view class="f-s-24" @click="navigateTos('/packagePartTime/jobMap')">三塘昆仑大道金仑路10号</view>
 					</view>
 				</view>
+				<!-- <view class="row start m-t-30">
+					<u-icon name="map" size="20" color="#999"></u-icon>
+					<view class="m-l-20">
+						<view class="f-s-26 m-b-20 color">工作福利</view>
+						<view class="f-s-24">工作福利</view>
+					</view>
+				</view> -->
 			</view>
 		</view>
 		
@@ -92,6 +99,25 @@
 			<JobList :list="jobList"></JobList>
 		</view>
 		
+		<view class="p-b-100 p-t-20 f-s-22 c9 row-center">本猫也是有底线的~</view>
+		
+		<view class="detail-bottom row center bg-fff border-box top-shadow">
+			<view class="detail-bottom__left row-center">
+				<view class="column-center">
+					<u-icon name="share" size="20" color="#F56718" label="分享" labelColor="#F56718"></u-icon>
+					<view class="main-color f-s-20 m-t-2">(分享可获得录用优先)</view>
+				</view>
+			</view>
+			
+			<view class="detail-bottom__right row-center f-s-26 c-white">
+				<view v-if="!isSign" class="column-center" @click="()=>handler().signSuccess()">
+					<text>我要报名</text>
+					<text class="f-s-20">(3098人已报名)</text>
+				</view>
+				<view v-else>已报名</view>
+			</view>
+		</view>
+		
 	</view>
 </template>
 
@@ -102,6 +128,7 @@
 		components: { LineHead, JobList },
 		data() {
 			return {
+				isSign: false,
 				jobList:[
 					{
 						title:'在家线上学习PS做兼职',
@@ -364,6 +391,10 @@
 					reload: ()=> {
 						
 					},
+					signSuccess:()=>{
+						console.log('signSuccess');
+						this.navigateTos('/packagePartTime/success')
+					}
 				}
 			}
 		}
@@ -444,6 +475,25 @@
 			background-color: $primary-color;
 			border-radius: 20rpx;
 			padding: 2rpx 10rpx;
+		}
+	}
+	
+	.detail-bottom {
+		position: fixed;
+		bottom: 0;
+		left: 0;
+		right: 0;
+		width: 750rpx;
+		height: 88rpx;
+		&__left {
+			width: 30%;
+			height: 100%;
+			background-color: #FFF;
+		}
+		&__right {
+			width: 70%;
+			height: 100%;
+			background-image: linear-gradient(to right, #FFBB00, #F56718);
 		}
 	}
 	

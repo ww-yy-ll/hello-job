@@ -3,7 +3,7 @@
 		<view 
 			v-if="show" 
 			class="mask" 
-			:style="{'--top':sysNav.top + sysNav.height + 50 }" 
+			:style="{'--top':sysNav.top + sysNav.height + top }" 
 			@click="maskClick" 
 			@touchmove.stop.prevent="moveHandle">
 		</view>
@@ -19,6 +19,12 @@
 	export default {
 		name: 'dropdown-item',
 		components: { DropdownItem },
+		props: {
+			top: {
+				type: Number,
+				default: 50
+			}
+		},
 		data() {
 			return {
 				show: false, // 筛选下拉框显隐
